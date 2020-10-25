@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Equipo3
 {
@@ -15,6 +16,12 @@ namespace Equipo3
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            CLIENTES formClientes = new CLIENTES();
+            formClientes.ShowDialog();
         }
     }
 }

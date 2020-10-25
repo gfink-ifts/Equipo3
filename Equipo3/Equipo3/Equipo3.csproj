@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ALTA-CLIENTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ALTA-CLIENTE.Designer.cs">
+      <DependentUpon>ALTA-CLIENTE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLIENTES.Designer.cs">
+      <DependentUpon>CLIENTES.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ALTA-CLIENTE.resx">
+      <DependentUpon>ALTA-CLIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLIENTES.resx">
+      <DependentUpon>CLIENTES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
