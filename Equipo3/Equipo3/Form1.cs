@@ -21,7 +21,9 @@ namespace Equipo3
         private void btnClientes_Click(object sender, EventArgs e)
         {
             CLIENTES formClientes = new CLIENTES();
+            this.Hide();
             formClientes.ShowDialog();
+            this.Show();
         }
     }
 }
