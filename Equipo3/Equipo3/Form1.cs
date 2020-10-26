@@ -25,5 +25,11 @@ namespace Equipo3
             formClientes.ShowDialog();
             this.Show();
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            PRODUCTOS formClientes = new PRODUCTOS();
+            formClientes.ShowDialog();
+        }
     }
 }
