@@ -129,5 +129,25 @@ namespace Equipo3
             else
                 MessageBox.Show("Seleccione una fila por favor.");
         }
+
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+            if (dtgvClientes.SelectedRows.Count > 0)
+            {
+                string ID = dtgvClientes.CurrentRow.Cells["id_cliente"].Value.ToString();
+                string cmd = "delete from cliente where id_cliente=" + ID;
+                SqlCommand comando = new SqlCommand(cmd, cn);
+                cn.Open();
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                cn.Close();
+                MessageBox.Show("Usuario eliminado correctamente");
+                vaciarCampos();
+                mostrarClientes();
+            }
+            else
+                MessageBox.Show("Seleccione una fila por favor.");
+
+        }
     }
 }

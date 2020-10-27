@@ -30,7 +30,7 @@
         {
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAltaCliente = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBaja = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dtgvClientes = new System.Windows.Forms.DataGridView();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -69,14 +69,15 @@
             this.btnAltaCliente.UseVisualStyleBackColor = true;
             this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
             // 
-            // button2
+            // btnBaja
             // 
-            this.button2.Location = new System.Drawing.Point(446, 418);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 59);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "BAJA";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBaja.Location = new System.Drawing.Point(446, 418);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(98, 59);
+            this.btnBaja.TabIndex = 3;
+            this.btnBaja.Text = "BAJA";
+            this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // button3
             // 
@@ -237,7 +238,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgvClientes);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.btnAltaCliente);
             this.Controls.Add(this.btnCerrar);
             this.Name = "CLIENTES";
@@ -252,7 +253,7 @@
         #endregion
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnAltaCliente;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dtgvClientes;
         private System.Windows.Forms.TextBox txtEmail;

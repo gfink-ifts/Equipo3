@@ -31,5 +31,13 @@ namespace Equipo3
             PRODUCTOS formClientes = new PRODUCTOS();
             formClientes.ShowDialog();
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            VENTAS formVentas = new VENTAS();
+            this.Hide();
+            formVentas.ShowDialog();
+            this.Show();
+        }
     }
 }
