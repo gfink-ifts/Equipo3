@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnAltaCliente = new System.Windows.Forms.Button();
             this.btnBaja = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dtgvClientes = new System.Windows.Forms.DataGridView();
@@ -59,33 +58,23 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // btnAltaCliente
-            // 
-            this.btnAltaCliente.Location = new System.Drawing.Point(677, 426);
-            this.btnAltaCliente.Name = "btnAltaCliente";
-            this.btnAltaCliente.Size = new System.Drawing.Size(98, 59);
-            this.btnAltaCliente.TabIndex = 2;
-            this.btnAltaCliente.Text = "ALTA";
-            this.btnAltaCliente.UseVisualStyleBackColor = true;
-            this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
-            // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(446, 418);
+            this.btnBaja.Location = new System.Drawing.Point(613, 364);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(98, 59);
             this.btnBaja.TabIndex = 3;
-            this.btnBaja.Text = "BAJA";
+            this.btnBaja.Text = "ELIMINAR";
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(446, 312);
+            this.button3.Location = new System.Drawing.Point(455, 364);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(98, 59);
             this.button3.TabIndex = 4;
-            this.button3.Text = "MODIFICACION";
+            this.button3.Text = "MODIFICAR";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -239,7 +228,6 @@
             this.Controls.Add(this.dtgvClientes);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnBaja);
-            this.Controls.Add(this.btnAltaCliente);
             this.Controls.Add(this.btnCerrar);
             this.Name = "CLIENTES";
             this.Text = "CLIENTES";
@@ -252,7 +240,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnAltaCliente;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dtgvClientes;
