@@ -38,15 +38,18 @@
             this.lblStock = new System.Windows.Forms.Label();
             this.gpbxSeleccion = new System.Windows.Forms.GroupBox();
             this.lblDisponible = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.btnAvanzar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDisponible)).BeginInit();
             this.gpbxSeleccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(573, 415);
+            this.btnVolver.Location = new System.Drawing.Point(578, 415);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(216, 23);
+            this.btnVolver.Size = new System.Drawing.Size(210, 23);
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "VOLVER";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -54,9 +57,9 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(350, 415);
+            this.btnConfirmar.Location = new System.Drawing.Point(667, 117);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(216, 23);
+            this.btnConfirmar.Size = new System.Drawing.Size(121, 23);
             this.btnConfirmar.TabIndex = 1;
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -123,7 +126,7 @@
             this.gpbxSeleccion.Controls.Add(this.lblTipo);
             this.gpbxSeleccion.Location = new System.Drawing.Point(350, 12);
             this.gpbxSeleccion.Name = "gpbxSeleccion";
-            this.gpbxSeleccion.Size = new System.Drawing.Size(438, 144);
+            this.gpbxSeleccion.Size = new System.Drawing.Size(311, 144);
             this.gpbxSeleccion.TabIndex = 8;
             this.gpbxSeleccion.TabStop = false;
             this.gpbxSeleccion.Text = "Producto seleccionado";
@@ -131,17 +134,45 @@
             // lblDisponible
             // 
             this.lblDisponible.AutoSize = true;
-            this.lblDisponible.Location = new System.Drawing.Point(120, 12);
+            this.lblDisponible.Location = new System.Drawing.Point(9, 12);
             this.lblDisponible.Name = "lblDisponible";
             this.lblDisponible.Size = new System.Drawing.Size(110, 13);
             this.lblDisponible.TabIndex = 9;
             this.lblDisponible.Text = "Productos disponibles";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(667, 76);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(121, 20);
+            this.txtCantidad.TabIndex = 10;
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(667, 57);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(96, 13);
+            this.lblCantidad.TabIndex = 11;
+            this.lblCantidad.Text = "Cantidad deseada:";
+            // 
+            // btnAvanzar
+            // 
+            this.btnAvanzar.Location = new System.Drawing.Point(350, 415);
+            this.btnAvanzar.Name = "btnAvanzar";
+            this.btnAvanzar.Size = new System.Drawing.Size(210, 23);
+            this.btnAvanzar.TabIndex = 12;
+            this.btnAvanzar.Text = "AVANZAR";
+            this.btnAvanzar.UseVisualStyleBackColor = true;
             // 
             // VENTAS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAvanzar);
+            this.Controls.Add(this.lblCantidad);
+            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.lblDisponible);
             this.Controls.Add(this.gpbxSeleccion);
             this.Controls.Add(this.dtgvDisponible);
@@ -170,5 +201,8 @@
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.GroupBox gpbxSeleccion;
         private System.Windows.Forms.Label lblDisponible;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.Button btnAvanzar;
     }
 }

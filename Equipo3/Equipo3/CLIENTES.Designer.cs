@@ -53,7 +53,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(397, 508);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(378, 25);
-            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.TabIndex = 8;
             this.btnCerrar.Text = "CERRAR";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -63,7 +63,7 @@
             this.btnBaja.Location = new System.Drawing.Point(613, 364);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(98, 59);
-            this.btnBaja.TabIndex = 3;
+            this.btnBaja.TabIndex = 10;
             this.btnBaja.Text = "ELIMINAR";
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
@@ -73,7 +73,7 @@
             this.button3.Location = new System.Drawing.Point(455, 364);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(98, 59);
-            this.button3.TabIndex = 4;
+            this.button3.TabIndex = 9;
             this.button3.Text = "MODIFICAR";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -84,7 +84,7 @@
             this.dtgvClientes.Location = new System.Drawing.Point(12, 12);
             this.dtgvClientes.Name = "dtgvClientes";
             this.dtgvClientes.Size = new System.Drawing.Size(763, 269);
-            this.dtgvClientes.TabIndex = 6;
+            this.dtgvClientes.TabIndex = 15;
             // 
             // txtEmail
             // 
@@ -92,7 +92,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(114, 20);
-            this.txtEmail.TabIndex = 39;
+            this.txtEmail.TabIndex = 6;
             // 
             // cmbTipoCliente
             // 
@@ -103,7 +103,7 @@
             this.cmbTipoCliente.Location = new System.Drawing.Point(126, 298);
             this.cmbTipoCliente.Name = "cmbTipoCliente";
             this.cmbTipoCliente.Size = new System.Drawing.Size(114, 21);
-            this.cmbTipoCliente.TabIndex = 38;
+            this.cmbTipoCliente.TabIndex = 1;
             // 
             // label5
             // 
@@ -121,7 +121,7 @@
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(114, 20);
-            this.txtTelefono.TabIndex = 36;
+            this.txtTelefono.TabIndex = 5;
             // 
             // txtDireccion
             // 
@@ -129,7 +129,7 @@
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(114, 20);
-            this.txtDireccion.TabIndex = 35;
+            this.txtDireccion.TabIndex = 4;
             // 
             // txtNombre
             // 
@@ -137,7 +137,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(114, 20);
-            this.txtNombre.TabIndex = 34;
+            this.txtNombre.TabIndex = 3;
             // 
             // txt_CUIT
             // 
@@ -145,7 +145,7 @@
             this.txt_CUIT.Margin = new System.Windows.Forms.Padding(2);
             this.txt_CUIT.Name = "txt_CUIT";
             this.txt_CUIT.Size = new System.Drawing.Size(114, 20);
-            this.txt_CUIT.TabIndex = 33;
+            this.txt_CUIT.TabIndex = 2;
             // 
             // label6
             // 
@@ -202,7 +202,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(12, 508);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(378, 25);
-            this.btnGuardar.TabIndex = 40;
+            this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
