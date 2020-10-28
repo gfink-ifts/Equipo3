@@ -30,18 +30,20 @@ namespace Equipo3
             string nombre;
             decimal precio_unitario;
             decimal stock;
-            int id_tipo_producto;
+            string id_tipo_producto;
+
             nombre = txtNombre.Text;
             precio_unitario = Convert.ToInt32 (txtprecio.Text);
             stock = Convert.ToInt32 (txtstock.Text);
-            id_tipo_producto = Convert.ToInt32(txttipo.Text);
-            string cmd = "insert into producto ( nombre,precio_unitario,stock,id_tipo_producto)" + "values ( @nombre, @precio_unitario, @stock, @id_tipo_producto )";
+            id_tipo_producto = txttipo.Text;
+            string cmd = "insert into producto ( id_tipo_producto,nombre,precio_unitario,stock)" + "values ( @id_tipo_producto, @nombre, @precio_unitario, @stock  )";
             SqlCommand comando = new SqlCommand(cmd, cn);
             
             comando.Parameters.AddWithValue("@nombre", nombre);
             comando.Parameters.AddWithValue("@precio_unitario", precio_unitario);
             comando.Parameters.AddWithValue("@stock", stock);
             comando.Parameters.AddWithValue("@id_tipo_producto", id_tipo_producto);
+
             cn.Open();
             comando.ExecuteNonQuery();
             cn.Close();
