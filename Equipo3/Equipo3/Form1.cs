@@ -29,7 +29,9 @@ namespace Equipo3
         private void btnProductos_Click(object sender, EventArgs e)
         {
             PRODUCTOS formClientes = new PRODUCTOS();
+            this.Hide();
             formClientes.ShowDialog();
+            this.Show();
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
