@@ -74,8 +74,8 @@ namespace Equipo3
 
             tipo_producto = cmbtipoproducto.Text;
             nombre = txtNombre.Text;
-            precio_unitario = Convert.ToInt32 (txtprecio.Text);
-            stock = Convert.ToInt32(txtstock.Text); 
+            precio_unitario = Convert.ToDecimal(txtprecio.Text);
+            stock = Convert.ToDecimal(txtstock.Text); 
             
 
             if (edicion == false)
