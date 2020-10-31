@@ -41,14 +41,8 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.btnAvanzar = new System.Windows.Forms.Button();
-            this.dtgvAcumulado = new System.Windows.Forms.DataGridView();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDisponible)).BeginInit();
             this.gpbxSeleccion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvAcumulado)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -171,45 +165,11 @@
             this.btnAvanzar.Text = "AVANZAR";
             this.btnAvanzar.UseVisualStyleBackColor = true;
             // 
-            // dtgvAcumulado
-            // 
-            this.dtgvAcumulado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvAcumulado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Item,
-            this.Producto,
-            this.Cantidad,
-            this.Subtotal});
-            this.dtgvAcumulado.Location = new System.Drawing.Point(350, 205);
-            this.dtgvAcumulado.Name = "dtgvAcumulado";
-            this.dtgvAcumulado.Size = new System.Drawing.Size(438, 150);
-            this.dtgvAcumulado.TabIndex = 13;
-            // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.Name = "Item";
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
-            // 
             // VENTAS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dtgvAcumulado);
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.txtCantidad);
@@ -224,7 +184,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDisponible)).EndInit();
             this.gpbxSeleccion.ResumeLayout(false);
             this.gpbxSeleccion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvAcumulado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,10 +204,5 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Button btnAvanzar;
-        private System.Windows.Forms.DataGridView dtgvAcumulado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
     }
 }
