@@ -30,7 +30,7 @@ namespace Equipo3
             cn = new SqlConnection(cadenaConex);
             SqlDataAdapter da;
             DataTable dt = new DataTable();
-            string query = "select nombre as Producto, precio_unitario as Precio, stock as Stock from producto";
+            string query = "select nombre as Producto, precio_unitario as Precio, stock as Stock from producto";           
             cn.Open();
             da = new SqlDataAdapter(query, cn);
             da.Fill(dt);

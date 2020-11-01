@@ -46,13 +46,7 @@ namespace Equipo3
             comando.ExecuteNonQuery();
             cn.Close();
             MessageBox.Show("Usuario creado correctamente");
-            foreach (Control variable in this.Controls)
-            {
-                if (variable is TextBox)
-                {
-                    (variable as TextBox).Clear();
-                }
-            }
+            this.Close();            
         }
 
         private void ALTA_CLIENTE_Load(object sender, EventArgs e)

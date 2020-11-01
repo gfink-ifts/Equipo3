@@ -36,9 +36,9 @@ namespace Equipo3
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            VENTAS formVentas = new VENTAS();
+            PREVENTA formPreventa = new PREVENTA();
             this.Hide();
-            formVentas.ShowDialog();
+            formPreventa.ShowDialog();
             this.Show();
         }
     }
