@@ -83,7 +83,7 @@
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnClientes);
             this.Name = "Form1";
-            this.Text = "Carnicería";
+            this.Text = "in";
             this.ResumeLayout(false);
 
         }
