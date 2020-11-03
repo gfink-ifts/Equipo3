@@ -69,6 +69,45 @@ namespace Equipo3
             label1.Text = dtgvClienteDisponible.CurrentRow.Cells["CUIT"].Value.ToString();
             label2.Text = dtgvClienteDisponible.CurrentRow.Cells["Tipo"].Value.ToString();
             label3.Text = dtgvClienteDisponible.CurrentRow.Cells["Cliente"].Value.ToString();
+
+
+            cn = new SqlConnection(cadenaConex);
+            string query = "select * from cliente WHERE cuit = " + label1.Text;
+            SqlCommand comando = new SqlCommand(query, cn);
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                label4.Text = (dr["direccion"].ToString());
+                label5.Text = (dr["telefono"].ToString());
+                label6.Text = (dr["email"].ToString());
+            }
+            dr.Close();
+            comando.Parameters.Clear();
+            cn.Close();
+            /*
+            try
+            {
+                con.Open();
+
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        CustID.Text = (read["Customer_ID"].ToString());
+                        CustName.Text = (read["Customer_Name"].ToString());
+                        Add1.Text = (read["Address_1"].ToString());
+                        Add2.Text = (read["Address_2"].ToString());
+                        PostBox.Text = (read["Postcode"].ToString());
+                        PassBox.Text = (read["Password"].ToString());
+                        DatBox.Text = (read["Data_Important"].ToString());
+                        LanNumb.Text = (read["Landline"].ToString());
+                        MobNumber.Text = (read["Mobile"].ToString());
+                        FaultRep.Text = (read["Fault_Report"].ToString());
+                    }
+                }
+            }
+
             /*
             label4.Text = dtgvClienteDisponible.CurrentRow.Cells["CUIT"].Value.ToString();
             label5.Text = dtgvClienteDisponible.CurrentRow.Cells["CUIT"].Value.ToString();
