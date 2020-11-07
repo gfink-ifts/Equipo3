@@ -37,6 +37,11 @@
             this.lblPrecioU = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.gpbxSeleccion = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblDisponible = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.lblCantidad = new System.Windows.Forms.Label();
@@ -47,11 +52,9 @@
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblTotalAcumulado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDisponible)).BeginInit();
             this.gpbxSeleccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListaProductos)).BeginInit();
@@ -150,84 +153,6 @@
             this.gpbxSeleccion.TabStop = false;
             this.gpbxSeleccion.Text = "Producto seleccionado";
             // 
-            // lblDisponible
-            // 
-            this.lblDisponible.AutoSize = true;
-            this.lblDisponible.Location = new System.Drawing.Point(9, 12);
-            this.lblDisponible.Name = "lblDisponible";
-            this.lblDisponible.Size = new System.Drawing.Size(110, 13);
-            this.lblDisponible.TabIndex = 9;
-            this.lblDisponible.Text = "Productos disponibles";
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(829, 79);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(121, 20);
-            this.txtCantidad.TabIndex = 10;
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(829, 60);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(96, 13);
-            this.lblCantidad.TabIndex = 11;
-            this.lblCantidad.Text = "Cantidad deseada:";
-            // 
-            // btnAvanzar
-            // 
-            this.btnAvanzar.Location = new System.Drawing.Point(512, 500);
-            this.btnAvanzar.Name = "btnAvanzar";
-            this.btnAvanzar.Size = new System.Drawing.Size(210, 23);
-            this.btnAvanzar.TabIndex = 12;
-            this.btnAvanzar.Text = "AVANZAR";
-            this.btnAvanzar.UseVisualStyleBackColor = true;
-            // 
-            // dtgvListaProductos
-            // 
-            this.dtgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvListaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.producto,
-            this.cantidad,
-            this.precio_unitario,
-            this.total_concepto});
-            this.dtgvListaProductos.Location = new System.Drawing.Point(512, 176);
-            this.dtgvListaProductos.Name = "dtgvListaProductos";
-            this.dtgvListaProductos.Size = new System.Drawing.Size(438, 318);
-            this.dtgvListaProductos.TabIndex = 13;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 40;
-            // 
-            // producto
-            // 
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            this.producto.Width = 120;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 75;
-            // 
-            // precio_unitario
-            // 
-            this.precio_unitario.HeaderText = "Precio U.";
-            this.precio_unitario.Name = "precio_unitario";
-            this.precio_unitario.Width = 75;
-            // 
-            // total_concepto
-            // 
-            this.total_concepto.HeaderText = "Total";
-            this.total_concepto.Name = "total_concepto";
-            this.total_concepto.Width = 75;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -273,11 +198,120 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "label5";
             // 
+            // lblDisponible
+            // 
+            this.lblDisponible.AutoSize = true;
+            this.lblDisponible.Location = new System.Drawing.Point(9, 12);
+            this.lblDisponible.Name = "lblDisponible";
+            this.lblDisponible.Size = new System.Drawing.Size(110, 13);
+            this.lblDisponible.TabIndex = 9;
+            this.lblDisponible.Text = "Productos disponibles";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(829, 79);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(121, 20);
+            this.txtCantidad.TabIndex = 10;
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(829, 60);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(96, 13);
+            this.lblCantidad.TabIndex = 11;
+            this.lblCantidad.Text = "Cantidad deseada:";
+            // 
+            // btnAvanzar
+            // 
+            this.btnAvanzar.Location = new System.Drawing.Point(512, 500);
+            this.btnAvanzar.Name = "btnAvanzar";
+            this.btnAvanzar.Size = new System.Drawing.Size(210, 23);
+            this.btnAvanzar.TabIndex = 12;
+            this.btnAvanzar.Text = "AVANZAR";
+            this.btnAvanzar.UseVisualStyleBackColor = true;
+            // 
+            // dtgvListaProductos
+            // 
+            this.dtgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvListaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.producto,
+            this.cantidad,
+            this.precio_unitario,
+            this.total_concepto});
+            this.dtgvListaProductos.Location = new System.Drawing.Point(512, 176);
+            this.dtgvListaProductos.Name = "dtgvListaProductos";
+            this.dtgvListaProductos.Size = new System.Drawing.Size(438, 274);
+            this.dtgvListaProductos.TabIndex = 13;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 40;
+            // 
+            // producto
+            // 
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            this.producto.Width = 120;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 75;
+            // 
+            // precio_unitario
+            // 
+            this.precio_unitario.HeaderText = "Precio U.";
+            this.precio_unitario.Name = "precio_unitario";
+            this.precio_unitario.Width = 75;
+            // 
+            // total_concepto
+            // 
+            this.total_concepto.HeaderText = "Total";
+            this.total_concepto.Name = "total_concepto";
+            this.total_concepto.Width = 75;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(807, 456);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(143, 23);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(350, 12);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(111, 13);
+            this.lblCliente.TabIndex = 15;
+            this.lblCliente.Text = "Cliente seleccionado: ";
+            // 
+            // lblTotalAcumulado
+            // 
+            this.lblTotalAcumulado.AutoSize = true;
+            this.lblTotalAcumulado.Location = new System.Drawing.Point(509, 466);
+            this.lblTotalAcumulado.Name = "lblTotalAcumulado";
+            this.lblTotalAcumulado.Size = new System.Drawing.Size(92, 13);
+            this.lblTotalAcumulado.TabIndex = 16;
+            this.lblTotalAcumulado.Text = "Total acumulado: ";
+            // 
             // VENTAS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 532);
+            this.Controls.Add(this.lblTotalAcumulado);
+            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dtgvListaProductos);
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.lblCantidad);
@@ -326,5 +360,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Label lblTotalAcumulado;
     }
 }

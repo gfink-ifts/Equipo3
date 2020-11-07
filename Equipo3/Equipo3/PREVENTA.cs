@@ -13,6 +13,7 @@ namespace Equipo3
 {
     public partial class PREVENTA : Form
     {
+        int id_cliente = 0;
         string cadenaConex = @"data source=.\SQLEXPRESS; initial catalog = CARNICERIA; integrated security= SSPI";
         SqlConnection cn;
         public PREVENTA()
@@ -58,7 +59,7 @@ namespace Equipo3
 
         private void btnAvanzar_Click(object sender, EventArgs e)
         {
-            VENTAS formVenta = new VENTAS();
+            VENTAS formVenta = new VENTAS(id_cliente);
             this.Hide();
             formVenta.ShowDialog();
             this.Show();
@@ -76,6 +77,7 @@ namespace Equipo3
             SqlDataReader dr = comando.ExecuteReader();
             while (dr.Read())
             {
+                id_cliente = Convert.ToInt32(dr[0].ToString());
                 label4.Text = (dr["direccion"].ToString());
                 label5.Text = (dr["telefono"].ToString());
                 label6.Text = (dr["email"].ToString());

@@ -15,10 +15,13 @@ namespace Equipo3
     {
         string cadenaConex = @"data source=.\SQLEXPRESS; initial catalog = CARNICERIA; integrated security= SSPI";
         SqlConnection cn;
+        int id_persona;
+        decimal total_acumulado = 0;
 
-        public VENTAS()
+        public VENTAS(int id_cliente)
         {
             InitializeComponent();
+            id_persona = id_cliente;            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -47,6 +50,8 @@ namespace Equipo3
             label3.Text = " ";
             label4.Text = " ";
             label5.Text = " ";
+            lblCliente.Text = "Cliente seleccionado: " + id_persona;
+            lblTotalAcumulado.Text = "Total acumulado: $ 0.00";
         }
 
         private void dtgvDisponible_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -72,7 +77,9 @@ namespace Equipo3
 
             decimal cantidad = Convert.ToDecimal(txtCantidad.Text);
             bool se_puede_agregar = CHEQUEO_STOCK(cantidad);
-            bool producto_repetido = CHEQUEO_SI_REPITE(dtgvListaProductos, label3.Text);
+            bool producto_repetido = false;
+
+
             if (producto_repetido)
             {
                 MessageBox.Show("Ya se eligió el producto.");
@@ -83,6 +90,8 @@ namespace Equipo3
                 {
                     decimal total_eleccion = cantidad * Convert.ToDecimal(label4.Text);
                     dtgvListaProductos.Rows.Add(label1.Text, label3.Text, cantidad, label4.Text, total_eleccion);
+                    total_acumulado = total_acumulado + total_eleccion;
+                    lblTotalAcumulado.Text = "Total acumulado: $ " + total_acumulado;
                 }
                 else
                     MessageBox.Show("La cantidad elegida supera el stock del producto.");
@@ -100,21 +109,36 @@ namespace Equipo3
             }
             return resultado;
         }
-
+        /*
         private bool CHEQUEO_SI_REPITE(DataGridView tabla, string eleccion)
         {
             bool se_repite = false;
 
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
-                if (eleccion == tabla.Rows[i].Cells[1].ToString())
+                string comparacion = tabla.Rows[i].Cells[2].ToString();
+                MessageBox.Show("se compara eleccion: " + eleccion + " contra valor de datagrid: " + comparacion);
+                if (eleccion == comparacion)
                 {
                     se_repite = true;
-                    break;
                 }
             }
 
             return se_repite;
+        }
+        */
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dtgvListaProductos.SelectedRows.Count > 0)
+            {
+                DataGridViewSelectedRowCollection fila = dtgvListaProductos.SelectedRows;
+                decimal parcial_eliminado = Convert.ToDecimal(dtgvListaProductos.SelectedRows[0].Cells[4].Value.ToString());
+                total_acumulado = total_acumulado - parcial_eliminado;
+                dtgvListaProductos.Rows.RemoveAt(dtgvListaProductos.SelectedRows[0].Index);
+                lblTotalAcumulado.Text = "Total acumulado: $ " + total_acumulado;
+            }
+            else
+                MessageBox.Show("Seleccione la fila del producto que quiere eliminar por favor.");
         }
     }
 }
