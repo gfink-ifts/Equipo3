@@ -58,6 +58,18 @@
     <Compile Include="ALTA-CLIENTE.Designer.cs">
       <DependentUpon>ALTA-CLIENTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="FACTURA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FACTURA.Designer.cs">
+      <DependentUpon>FACTURA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMAS_PAGO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMAS_PAGO.Designer.cs">
+      <DependentUpon>FORMAS_PAGO.cs</DependentUpon>
+    </Compile>
     <Compile Include="PREVENTA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ALTA-CLIENTE.resx">
       <DependentUpon>ALTA-CLIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FACTURA.resx">
+      <DependentUpon>FACTURA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMAS_PAGO.resx">
+      <DependentUpon>FORMAS_PAGO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PREVENTA.resx">
       <DependentUpon>PREVENTA.cs</DependentUpon>

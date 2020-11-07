@@ -41,5 +41,13 @@ namespace Equipo3
             formPreventa.ShowDialog();
             this.Show();
         }
+
+        private void btnFormaPago_Click(object sender, EventArgs e)
+        {
+            FORMAS_PAGO formFormaPago = new FORMAS_PAGO();
+            this.Hide();
+            formFormaPago.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -32,6 +32,7 @@
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
+            this.btnFormaPago = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClientes
@@ -46,7 +47,7 @@
             // 
             // btnReportes
             // 
-            this.btnReportes.Location = new System.Drawing.Point(12, 210);
+            this.btnReportes.Location = new System.Drawing.Point(12, 276);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(278, 60);
             this.btnReportes.TabIndex = 1;
@@ -73,11 +74,22 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
+            // btnFormaPago
+            // 
+            this.btnFormaPago.Location = new System.Drawing.Point(12, 210);
+            this.btnFormaPago.Name = "btnFormaPago";
+            this.btnFormaPago.Size = new System.Drawing.Size(278, 60);
+            this.btnFormaPago.TabIndex = 4;
+            this.btnFormaPago.Text = "FORMAS DE PAGO";
+            this.btnFormaPago.UseVisualStyleBackColor = true;
+            this.btnFormaPago.Click += new System.EventHandler(this.btnFormaPago_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 384);
+            this.Controls.Add(this.btnFormaPago);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnReportes);
@@ -94,6 +106,7 @@
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnProductos;
+        private System.Windows.Forms.Button btnFormaPago;
     }
 }
 
