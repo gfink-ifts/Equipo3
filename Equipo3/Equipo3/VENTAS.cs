@@ -72,13 +72,22 @@ namespace Equipo3
 
             decimal cantidad = Convert.ToDecimal(txtCantidad.Text);
             bool se_puede_agregar = CHEQUEO_STOCK(cantidad);
-            if (se_puede_agregar)
+            bool producto_repetido = CHEQUEO_SI_REPITE(dtgvListaProductos, label3.Text);
+            if (producto_repetido)
             {
-                decimal total_eleccion = cantidad * Convert.ToDecimal(label4.Text);
-                dtgvListaProductos.Rows.Add(label1.Text, label3.Text, cantidad, label4.Text, total_eleccion);
+                MessageBox.Show("Ya se eligió el producto.");
             }
             else
-                MessageBox.Show("La cantidad elegida supera el stock del producto.");
+            {
+                if (se_puede_agregar)
+                {
+                    decimal total_eleccion = cantidad * Convert.ToDecimal(label4.Text);
+                    dtgvListaProductos.Rows.Add(label1.Text, label3.Text, cantidad, label4.Text, total_eleccion);
+                }
+                else
+                    MessageBox.Show("La cantidad elegida supera el stock del producto.");
+            }
+            
         }
 
         private bool CHEQUEO_STOCK (decimal cantidad_elegida)
@@ -90,6 +99,22 @@ namespace Equipo3
                 resultado = false;
             }
             return resultado;
+        }
+
+        private bool CHEQUEO_SI_REPITE(DataGridView tabla, string eleccion)
+        {
+            bool se_repite = false;
+
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                if (eleccion == tabla.Rows[i].Cells[1].ToString())
+                {
+                    se_repite = true;
+                    break;
+                }
+            }
+
+            return se_repite;
         }
     }
 }
