@@ -58,11 +58,18 @@ namespace Equipo3
         }
 
         private void btnAvanzar_Click(object sender, EventArgs e)
-        {
-            VENTAS formVenta = new VENTAS(id_cliente);
-            this.Hide();
-            formVenta.ShowDialog();
-            this.Show();
+        {   
+            if (id_cliente == 0)
+            {
+                MessageBox.Show("Seleccione un cliente por favor");
+            }
+            else
+            {
+                VENTAS formVenta = new VENTAS(id_cliente);
+                this.Hide();
+                formVenta.ShowDialog();
+                this.Show();
+            }
         }
 
         private void dtgvClienteDisponible_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
