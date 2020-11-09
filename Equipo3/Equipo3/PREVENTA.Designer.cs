@@ -61,6 +61,7 @@
             // 
             // gpbxSeleccion
             // 
+            this.gpbxSeleccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.gpbxSeleccion.Controls.Add(this.label6);
             this.gpbxSeleccion.Controls.Add(this.label5);
             this.gpbxSeleccion.Controls.Add(this.label4);
@@ -73,6 +74,7 @@
             this.gpbxSeleccion.Controls.Add(this.lblTipoCliente);
             this.gpbxSeleccion.Controls.Add(this.lblDireccion);
             this.gpbxSeleccion.Controls.Add(this.lblCUIT);
+            this.gpbxSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbxSeleccion.Location = new System.Drawing.Point(415, 12);
             this.gpbxSeleccion.Name = "gpbxSeleccion";
             this.gpbxSeleccion.Size = new System.Drawing.Size(373, 161);
@@ -85,7 +87,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(53, 138);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "label6";
             // 
@@ -94,7 +96,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(67, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "label5";
             // 
@@ -103,7 +105,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(70, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "label4";
             // 
@@ -112,7 +114,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(62, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "label3";
             // 
@@ -121,7 +123,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(92, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "label2";
             // 
@@ -130,7 +132,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(50, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "label1";
             // 
@@ -139,7 +141,7 @@
             this.lblMail.AutoSize = true;
             this.lblMail.Location = new System.Drawing.Point(6, 138);
             this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(41, 13);
+            this.lblMail.Size = new System.Drawing.Size(49, 13);
             this.lblMail.TabIndex = 8;
             this.lblMail.Text = "E-mail: ";
             // 
@@ -148,7 +150,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(6, 71);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(50, 13);
+            this.lblNombre.Size = new System.Drawing.Size(58, 13);
             this.lblNombre.TabIndex = 5;
             this.lblNombre.Text = "Nombre: ";
             // 
@@ -157,7 +159,7 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(6, 115);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(65, 13);
             this.lblTelefono.TabIndex = 7;
             this.lblTelefono.Text = "Teléfono: ";
             // 
@@ -166,7 +168,7 @@
             this.lblTipoCliente.AutoSize = true;
             this.lblTipoCliente.Location = new System.Drawing.Point(6, 27);
             this.lblTipoCliente.Name = "lblTipoCliente";
-            this.lblTipoCliente.Size = new System.Drawing.Size(38, 13);
+            this.lblTipoCliente.Size = new System.Drawing.Size(44, 13);
             this.lblTipoCliente.TabIndex = 3;
             this.lblTipoCliente.Text = "CUIT: ";
             // 
@@ -175,7 +177,7 @@
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Location = new System.Drawing.Point(6, 93);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(58, 13);
+            this.lblDireccion.Size = new System.Drawing.Size(69, 13);
             this.lblDireccion.TabIndex = 6;
             this.lblDireccion.Text = "Dirección: ";
             // 
@@ -184,7 +186,7 @@
             this.lblCUIT.AutoSize = true;
             this.lblCUIT.Location = new System.Drawing.Point(6, 49);
             this.lblCUIT.Name = "lblCUIT";
-            this.lblCUIT.Size = new System.Drawing.Size(80, 13);
+            this.lblCUIT.Size = new System.Drawing.Size(96, 13);
             this.lblCUIT.TabIndex = 4;
             this.lblCUIT.Text = "Tipo de cliente:";
             // 

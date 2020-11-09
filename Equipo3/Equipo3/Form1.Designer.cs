@@ -37,9 +37,9 @@
             // 
             // btnClientes
             // 
-            this.btnClientes.Location = new System.Drawing.Point(12, 12);
+            this.btnClientes.Location = new System.Drawing.Point(14, 12);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(278, 60);
+            this.btnClientes.Size = new System.Drawing.Size(324, 60);
             this.btnClientes.TabIndex = 0;
             this.btnClientes.Text = "CLIENTES";
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -47,18 +47,18 @@
             // 
             // btnReportes
             // 
-            this.btnReportes.Location = new System.Drawing.Point(12, 276);
+            this.btnReportes.Location = new System.Drawing.Point(14, 276);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(278, 60);
+            this.btnReportes.Size = new System.Drawing.Size(324, 60);
             this.btnReportes.TabIndex = 1;
             this.btnReportes.Text = "REPORTES";
             this.btnReportes.UseVisualStyleBackColor = true;
             // 
             // btnVentas
             // 
-            this.btnVentas.Location = new System.Drawing.Point(12, 144);
+            this.btnVentas.Location = new System.Drawing.Point(14, 144);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(278, 60);
+            this.btnVentas.Size = new System.Drawing.Size(324, 60);
             this.btnVentas.TabIndex = 2;
             this.btnVentas.Text = "VENTAS";
             this.btnVentas.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@
             // 
             // btnProductos
             // 
-            this.btnProductos.Location = new System.Drawing.Point(12, 78);
+            this.btnProductos.Location = new System.Drawing.Point(14, 78);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(278, 60);
+            this.btnProductos.Size = new System.Drawing.Size(324, 60);
             this.btnProductos.TabIndex = 3;
             this.btnProductos.Text = "PRODUCTOS";
             this.btnProductos.UseVisualStyleBackColor = true;
@@ -76,9 +76,9 @@
             // 
             // btnFormaPago
             // 
-            this.btnFormaPago.Location = new System.Drawing.Point(12, 210);
+            this.btnFormaPago.Location = new System.Drawing.Point(14, 210);
             this.btnFormaPago.Name = "btnFormaPago";
-            this.btnFormaPago.Size = new System.Drawing.Size(278, 60);
+            this.btnFormaPago.Size = new System.Drawing.Size(324, 60);
             this.btnFormaPago.TabIndex = 4;
             this.btnFormaPago.Text = "FORMAS DE PAGO";
             this.btnFormaPago.UseVisualStyleBackColor = true;
@@ -86,14 +86,16 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 384);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(352, 384);
             this.Controls.Add(this.btnFormaPago);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnClientes);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CARNICERIA";

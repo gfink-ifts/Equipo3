@@ -55,6 +55,10 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblTotalAcumulado = new System.Windows.Forms.Label();
             this.gpbxCliente = new System.Windows.Forms.GroupBox();
+            this.lblTelCliente = new System.Windows.Forms.Label();
+            this.lblEmailCliente = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.lblIDCliente = new System.Windows.Forms.Label();
             this.lblTipoCliente = new System.Windows.Forms.Label();
             this.lblCUITCliente = new System.Windows.Forms.Label();
@@ -65,17 +69,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.lblTelCliente = new System.Windows.Forms.Label();
-            this.lblEmailCliente = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.lblPrecioFinal = new System.Windows.Forms.Label();
             this.lblDescuento = new System.Windows.Forms.Label();
             this.gpbxFormaPago = new System.Windows.Forms.GroupBox();
-            this.cmbFormasPago = new System.Windows.Forms.ComboBox();
-            this.rdbEfectivo = new System.Windows.Forms.RadioButton();
-            this.rdbTarjeta = new System.Windows.Forms.RadioButton();
             this.lblTarjeta = new System.Windows.Forms.Label();
+            this.rdbTarjeta = new System.Windows.Forms.RadioButton();
+            this.rdbEfectivo = new System.Windows.Forms.RadioButton();
+            this.cmbFormasPago = new System.Windows.Forms.ComboBox();
+            this.btnCalcularDescuento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDisponible)).BeginInit();
             this.gpbxSeleccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListaProductos)).BeginInit();
@@ -316,7 +317,7 @@
             // 
             this.lblTotalAcumulado.AutoSize = true;
             this.lblTotalAcumulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAcumulado.Location = new System.Drawing.Point(931, 227);
+            this.lblTotalAcumulado.Location = new System.Drawing.Point(932, 214);
             this.lblTotalAcumulado.Name = "lblTotalAcumulado";
             this.lblTotalAcumulado.Size = new System.Drawing.Size(177, 24);
             this.lblTotalAcumulado.TabIndex = 16;
@@ -346,6 +347,42 @@
             this.gpbxCliente.TabIndex = 13;
             this.gpbxCliente.TabStop = false;
             this.gpbxCliente.Text = "Cliente seleccionado";
+            // 
+            // lblTelCliente
+            // 
+            this.lblTelCliente.AutoSize = true;
+            this.lblTelCliente.Location = new System.Drawing.Point(119, 138);
+            this.lblTelCliente.Name = "lblTelCliente";
+            this.lblTelCliente.Size = new System.Drawing.Size(48, 13);
+            this.lblTelCliente.TabIndex = 16;
+            this.lblTelCliente.Text = "label16";
+            // 
+            // lblEmailCliente
+            // 
+            this.lblEmailCliente.AutoSize = true;
+            this.lblEmailCliente.Location = new System.Drawing.Point(119, 160);
+            this.lblEmailCliente.Name = "lblEmailCliente";
+            this.lblEmailCliente.Size = new System.Drawing.Size(48, 13);
+            this.lblEmailCliente.TabIndex = 15;
+            this.lblEmailCliente.Text = "label17";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 138);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 13);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Teléfono: ";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 160);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(49, 13);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "E-mail: ";
             // 
             // lblIDCliente
             // 
@@ -437,42 +474,6 @@
             this.label15.TabIndex = 4;
             this.label15.Text = "Tipo de cliente: ";
             // 
-            // lblTelCliente
-            // 
-            this.lblTelCliente.AutoSize = true;
-            this.lblTelCliente.Location = new System.Drawing.Point(119, 138);
-            this.lblTelCliente.Name = "lblTelCliente";
-            this.lblTelCliente.Size = new System.Drawing.Size(48, 13);
-            this.lblTelCliente.TabIndex = 16;
-            this.lblTelCliente.Text = "label16";
-            // 
-            // lblEmailCliente
-            // 
-            this.lblEmailCliente.AutoSize = true;
-            this.lblEmailCliente.Location = new System.Drawing.Point(119, 160);
-            this.lblEmailCliente.Name = "lblEmailCliente";
-            this.lblEmailCliente.Size = new System.Drawing.Size(48, 13);
-            this.lblEmailCliente.TabIndex = 15;
-            this.lblEmailCliente.Text = "label17";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 138);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 13);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Teléfono: ";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 160);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 13);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "E-mail: ";
-            // 
             // lblPrecioFinal
             // 
             this.lblPrecioFinal.AutoSize = true;
@@ -487,7 +488,7 @@
             // 
             this.lblDescuento.AutoSize = true;
             this.lblDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuento.Location = new System.Drawing.Point(932, 377);
+            this.lblDescuento.Location = new System.Drawing.Point(932, 389);
             this.lblDescuento.Name = "lblDescuento";
             this.lblDescuento.Size = new System.Drawing.Size(122, 24);
             this.lblDescuento.TabIndex = 18;
@@ -495,16 +496,51 @@
             // 
             // gpbxFormaPago
             // 
+            this.gpbxFormaPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gpbxFormaPago.Controls.Add(this.btnCalcularDescuento);
             this.gpbxFormaPago.Controls.Add(this.lblTarjeta);
             this.gpbxFormaPago.Controls.Add(this.rdbTarjeta);
             this.gpbxFormaPago.Controls.Add(this.rdbEfectivo);
             this.gpbxFormaPago.Controls.Add(this.cmbFormasPago);
+            this.gpbxFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbxFormaPago.Location = new System.Drawing.Point(936, 254);
             this.gpbxFormaPago.Name = "gpbxFormaPago";
             this.gpbxFormaPago.Size = new System.Drawing.Size(311, 120);
             this.gpbxFormaPago.TabIndex = 19;
             this.gpbxFormaPago.TabStop = false;
             this.gpbxFormaPago.Text = "Forma de pago";
+            // 
+            // lblTarjeta
+            // 
+            this.lblTarjeta.AutoSize = true;
+            this.lblTarjeta.Location = new System.Drawing.Point(97, 47);
+            this.lblTarjeta.Name = "lblTarjeta";
+            this.lblTarjeta.Size = new System.Drawing.Size(41, 13);
+            this.lblTarjeta.TabIndex = 5;
+            this.lblTarjeta.Text = "label6";
+            // 
+            // rdbTarjeta
+            // 
+            this.rdbTarjeta.AutoSize = true;
+            this.rdbTarjeta.Location = new System.Drawing.Point(9, 70);
+            this.rdbTarjeta.Name = "rdbTarjeta";
+            this.rdbTarjeta.Size = new System.Drawing.Size(65, 17);
+            this.rdbTarjeta.TabIndex = 4;
+            this.rdbTarjeta.TabStop = true;
+            this.rdbTarjeta.Text = "Tarjeta";
+            this.rdbTarjeta.UseVisualStyleBackColor = true;
+            this.rdbTarjeta.CheckedChanged += new System.EventHandler(this.rdbTarjeta_CheckedChanged);
+            // 
+            // rdbEfectivo
+            // 
+            this.rdbEfectivo.AutoSize = true;
+            this.rdbEfectivo.Location = new System.Drawing.Point(9, 47);
+            this.rdbEfectivo.Name = "rdbEfectivo";
+            this.rdbEfectivo.Size = new System.Drawing.Size(72, 17);
+            this.rdbEfectivo.TabIndex = 3;
+            this.rdbEfectivo.TabStop = true;
+            this.rdbEfectivo.Text = "Efectivo";
+            this.rdbEfectivo.UseVisualStyleBackColor = true;
             // 
             // cmbFormasPago
             // 
@@ -514,37 +550,15 @@
             this.cmbFormasPago.Size = new System.Drawing.Size(205, 21);
             this.cmbFormasPago.TabIndex = 2;
             // 
-            // rdbEfectivo
+            // btnCalcularDescuento
             // 
-            this.rdbEfectivo.AutoSize = true;
-            this.rdbEfectivo.Location = new System.Drawing.Point(9, 47);
-            this.rdbEfectivo.Name = "rdbEfectivo";
-            this.rdbEfectivo.Size = new System.Drawing.Size(64, 17);
-            this.rdbEfectivo.TabIndex = 3;
-            this.rdbEfectivo.TabStop = true;
-            this.rdbEfectivo.Text = "Efectivo";
-            this.rdbEfectivo.UseVisualStyleBackColor = true;
-            // 
-            // rdbTarjeta
-            // 
-            this.rdbTarjeta.AutoSize = true;
-            this.rdbTarjeta.Location = new System.Drawing.Point(9, 70);
-            this.rdbTarjeta.Name = "rdbTarjeta";
-            this.rdbTarjeta.Size = new System.Drawing.Size(58, 17);
-            this.rdbTarjeta.TabIndex = 4;
-            this.rdbTarjeta.TabStop = true;
-            this.rdbTarjeta.Text = "Tarjeta";
-            this.rdbTarjeta.UseVisualStyleBackColor = true;
-            this.rdbTarjeta.CheckedChanged += new System.EventHandler(this.rdbTarjeta_CheckedChanged);
-            // 
-            // lblTarjeta
-            // 
-            this.lblTarjeta.AutoSize = true;
-            this.lblTarjeta.Location = new System.Drawing.Point(97, 47);
-            this.lblTarjeta.Name = "lblTarjeta";
-            this.lblTarjeta.Size = new System.Drawing.Size(35, 13);
-            this.lblTarjeta.TabIndex = 5;
-            this.lblTarjeta.Text = "label6";
+            this.btnCalcularDescuento.Location = new System.Drawing.Point(100, 91);
+            this.btnCalcularDescuento.Name = "btnCalcularDescuento";
+            this.btnCalcularDescuento.Size = new System.Drawing.Size(205, 23);
+            this.btnCalcularDescuento.TabIndex = 6;
+            this.btnCalcularDescuento.Text = "Calcular descuento";
+            this.btnCalcularDescuento.UseVisualStyleBackColor = true;
+            this.btnCalcularDescuento.Click += new System.EventHandler(this.btnCalcularDescuento_Click);
             // 
             // VENTAS
             // 
@@ -633,5 +647,6 @@
         private System.Windows.Forms.RadioButton rdbTarjeta;
         private System.Windows.Forms.RadioButton rdbEfectivo;
         private System.Windows.Forms.ComboBox cmbFormasPago;
+        private System.Windows.Forms.Button btnCalcularDescuento;
     }
 }

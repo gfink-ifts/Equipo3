@@ -19,6 +19,7 @@ namespace Equipo3
         decimal total_acumulado = 0;
         decimal descuento = 0;
         decimal precio_final = 0;
+        int id_pago;
 
         public VENTAS(int id_cliente)
         {
@@ -58,6 +59,7 @@ namespace Equipo3
             lblPrecioFinal.Text = "Precio Final: $ 0.00";
             lblTarjeta.Text = " ";
             cmbFormasPago.Enabled = false;
+            btnCalcularDescuento.Enabled = false;
         }
 
         private void cargarCliente()
@@ -162,6 +164,7 @@ namespace Equipo3
                 total_acumulado = total_acumulado - parcial_eliminado;
                 dtgvListaProductos.Rows.RemoveAt(dtgvListaProductos.SelectedRows[0].Index);
                 lblTotalAcumulado.Text = "Total acumulado: $ " + total_acumulado;
+                actualizar_precio_final();
             }
             else
                 MessageBox.Show("Seleccione la fila del producto que quiere eliminar por favor.");
@@ -185,14 +188,15 @@ namespace Equipo3
             {
                 lblTarjeta.Text = "Elija una opción:";
                 cmbFormasPago.Enabled = true;
+                btnCalcularDescuento.Enabled = true;
                 fill_combo();
-
             }
             else
             {
                 descuento = 0;         
                 lblTarjeta.Text = " ";
                 cmbFormasPago.Enabled = false;
+                btnCalcularDescuento.Enabled = false;
             }
             actualizar_precio_final();
         }
@@ -218,5 +222,29 @@ namespace Equipo3
             cmbFormasPago.DisplayMember = "forma_pago";
             cn.Close();
         }
+
+        private void btnCalcularDescuento_Click(object sender, EventArgs e)
+        {
+            string forma_pago;
+            string query = "select * from forma_pago where forma_pago = '" + cmbFormasPago.Text + "'";
+            SqlCommand comando = new SqlCommand(query, cn);
+            cn.Open();
+            SqlDataReader lectura = comando.ExecuteReader();
+            while (lectura.Read())
+            {
+                id_pago = Convert.ToInt32(lectura[0].ToString());
+                forma_pago = lectura[1].ToString();
+                descuento = Convert.ToDecimal(lectura[2].ToString());
+            }
+            cn.Close();
+
+        }
+
+        /*
+        private void cmbFormasPago_SelectedValueChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Calcular descuento");
+        }
+        */
     }
 }
