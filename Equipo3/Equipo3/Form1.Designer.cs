@@ -95,7 +95,8 @@
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnClientes);
             this.Name = "Form1";
-            this.Text = "in";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CARNICERIA";
             this.ResumeLayout(false);
 
         }

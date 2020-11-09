@@ -17,6 +17,8 @@ namespace Equipo3
         SqlConnection cn;
         int id_persona;
         decimal total_acumulado = 0;
+        decimal descuento = 0;
+        decimal precio_final = 0;
 
         public VENTAS(int id_cliente)
         {
@@ -50,8 +52,31 @@ namespace Equipo3
             label3.Text = " ";
             label4.Text = " ";
             label5.Text = " ";
-            lblCliente.Text = "Cliente seleccionado: " + id_persona;
+            cargarCliente();
             lblTotalAcumulado.Text = "Total acumulado: $ 0.00";
+            lblDescuento.Text = "Descuento: $ 0.00";
+            lblPrecioFinal.Text = "Precio Final: $ 0.00";
+            lblTarjeta.Text = " ";
+            cmbFormasPago.Enabled = false;
+        }
+
+        private void cargarCliente()
+        {
+            string query = "select * from cliente where id_cliente = " + id_persona;
+            SqlCommand comando = new SqlCommand(query, cn);
+            cn.Open();
+            SqlDataReader lectura = comando.ExecuteReader();
+            while (lectura.Read())
+            {
+                lblIDCliente.Text = lectura[0].ToString();
+                lblTipoCliente.Text = lectura[1].ToString();
+                lblCUITCliente.Text = lectura[2].ToString();
+                lblNombreCliente.Text = lectura[3].ToString();
+                lblDireCliente.Text = lectura[4].ToString();
+                lblTelCliente.Text = lectura[5].ToString();
+                lblEmailCliente.Text = lectura[6].ToString();
+            }
+            cn.Close();
         }
 
         private void dtgvDisponible_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -92,6 +117,7 @@ namespace Equipo3
                     dtgvListaProductos.Rows.Add(label1.Text, label3.Text, cantidad, label4.Text, total_eleccion);
                     total_acumulado = total_acumulado + total_eleccion;
                     lblTotalAcumulado.Text = "Total acumulado: $ " + total_acumulado;
+                    actualizar_precio_final();
                 }
                 else
                     MessageBox.Show("La cantidad elegida supera el stock del producto.");
@@ -139,6 +165,58 @@ namespace Equipo3
             }
             else
                 MessageBox.Show("Seleccione la fila del producto que quiere eliminar por favor.");
+        }
+
+        private void btnAvanzar_Click(object sender, EventArgs e)
+        {
+            if (total_acumulado == 0)
+            {
+                MessageBox.Show("Cargue artículos en la lista para avanzar por favor");
+            }
+            else
+            {
+                MessageBox.Show("Desea confirmar su compra?");            
+            }
+        }
+
+        private void rdbTarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbTarjeta.Checked)
+            {
+                lblTarjeta.Text = "Elija una opción:";
+                cmbFormasPago.Enabled = true;
+                fill_combo();
+
+            }
+            else
+            {
+                descuento = 0;         
+                lblTarjeta.Text = " ";
+                cmbFormasPago.Enabled = false;
+            }
+            actualizar_precio_final();
+        }
+
+        private void actualizar_precio_final()
+        {
+            precio_final = total_acumulado - descuento;
+            lblDescuento.Text = "Descuento: $ " + descuento;
+            lblPrecioFinal.Text = "Precio Final: $ " + precio_final;
+        }
+
+        private void fill_combo()
+        {
+            cn = new SqlConnection(cadenaConex);
+            string query = "select * from forma_pago";
+            SqlDataAdapter lectura;
+            DataTable dt = new DataTable();
+            cn.Open();
+            lectura = new SqlDataAdapter(query, cn);
+            lectura.Fill(dt);
+            cmbFormasPago.DataSource = dt;
+            cmbFormasPago.ValueMember = "id_forma_pago";
+            cmbFormasPago.DisplayMember = "forma_pago";
+            cn.Close();
         }
     }
 }
