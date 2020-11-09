@@ -164,6 +164,8 @@ namespace Equipo3
                 total_acumulado = total_acumulado - parcial_eliminado;
                 dtgvListaProductos.Rows.RemoveAt(dtgvListaProductos.SelectedRows[0].Index);
                 lblTotalAcumulado.Text = "Total acumulado: $ " + total_acumulado;
+                descuento = 0;
+                MessageBox.Show("Al eliminar un producto debe recalcular el descuento aplicado.");
                 actualizar_precio_final();
             }
             else
@@ -178,7 +180,7 @@ namespace Equipo3
             }
             else
             {
-                MessageBox.Show("Desea confirmar su compra?");            
+                confeccionFactura();            
             }
         }
 
@@ -226,25 +228,54 @@ namespace Equipo3
         private void btnCalcularDescuento_Click(object sender, EventArgs e)
         {
             string forma_pago;
+            decimal porcentaje_desc;
             string query = "select * from forma_pago where forma_pago = '" + cmbFormasPago.Text + "'";
             SqlCommand comando = new SqlCommand(query, cn);
             cn.Open();
             SqlDataReader lectura = comando.ExecuteReader();
             while (lectura.Read())
             {
+                MessageBox.Show("El descuento para esta forma de pago es: "+ lectura[2].ToString() + "%");
                 id_pago = Convert.ToInt32(lectura[0].ToString());
                 forma_pago = lectura[1].ToString();
-                descuento = Convert.ToDecimal(lectura[2].ToString());
+                porcentaje_desc = Convert.ToDecimal(lectura[2].ToString());
+                descuento = (total_acumulado * porcentaje_desc) / 100;
             }
             cn.Close();
-
+            actualizar_precio_final();
+            
         }
 
-        /*
-        private void cmbFormasPago_SelectedValueChanged(object sender, EventArgs e)
+        private void confeccionFactura()
         {
-            MessageBox.Show("Calcular descuento");
+            //ARMADO FACTURA
+            int id_venta = 0; //chequear tabla de ventas
+            DateTime fecha = DateTime.Now;
+            int el_cliente = id_persona;
+            int id_forma_pago = id_pago;
+            decimal subtotal = total_acumulado;
+            decimal total = precio_final;
+
+
+            string cmd = "insert into venta (fecha,id_cliente,id_forma_pago,subtotal,total)" + "values ( @fecha, @id_cliente, @id_forma_pago, @subtotal, @total )";
+            SqlCommand comando = new SqlCommand(cmd, cn);
+            comando.Parameters.AddWithValue("@tipo_cliente", tipo_cliente);
+            comando.Parameters.AddWithValue("@CUIT", CUIT);
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@direccion", direccion);
+            comando.Parameters.AddWithValue("@telefono", telefono);
+            comando.Parameters.AddWithValue("@email", email);
+            cn.Open();
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            cn.Close();
+
+
+
+            //ARMADO CONCEPTOS DE FACTURA
+            //recorrer la tabla de lista de productos para meter en tabla concepto
+
+            MessageBox.Show("La venta se ha realizado con éxito.");            
         }
-        */
     }
 }
