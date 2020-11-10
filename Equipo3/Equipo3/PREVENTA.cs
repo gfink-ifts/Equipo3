@@ -88,6 +88,7 @@ namespace Equipo3
                 label4.Text = (dr["direccion"].ToString());
                 label5.Text = (dr["telefono"].ToString());
                 label6.Text = (dr["email"].ToString());
+
             }
             dr.Close();
             comando.Parameters.Clear();

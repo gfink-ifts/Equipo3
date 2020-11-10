@@ -32,7 +32,7 @@
             this.cmbcliente = new System.Windows.Forms.ComboBox();
             this.cmbproducto = new System.Windows.Forms.ComboBox();
             this.btnbuscar = new System.Windows.Forms.Button();
-            this.btlimpiar = new System.Windows.Forms.Button();
+            this.btlborrar = new System.Windows.Forms.Button();
             this.cliente = new System.Windows.Forms.Label();
             this.producto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewreporte)).BeginInit();
@@ -53,7 +53,6 @@
             this.cmbcliente.Name = "cmbcliente";
             this.cmbcliente.Size = new System.Drawing.Size(121, 21);
             this.cmbcliente.TabIndex = 1;
-          
             // 
             // cmbproducto
             // 
@@ -73,14 +72,15 @@
             this.btnbuscar.UseVisualStyleBackColor = true;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
-            // btlimpiar
+            // btlborrar
             // 
-            this.btlimpiar.Location = new System.Drawing.Point(643, 293);
-            this.btlimpiar.Name = "btlimpiar";
-            this.btlimpiar.Size = new System.Drawing.Size(75, 23);
-            this.btlimpiar.TabIndex = 4;
-            this.btlimpiar.Text = "LIMPIAR";
-            this.btlimpiar.UseVisualStyleBackColor = true;
+            this.btlborrar.Location = new System.Drawing.Point(643, 293);
+            this.btlborrar.Name = "btlborrar";
+            this.btlborrar.Size = new System.Drawing.Size(75, 23);
+            this.btlborrar.TabIndex = 4;
+            this.btlborrar.Text = "BORRAR";
+            this.btlborrar.UseVisualStyleBackColor = true;
+            this.btlborrar.Click += new System.EventHandler(this.btlborrar_Click);
             // 
             // cliente
             // 
@@ -107,7 +107,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.producto);
             this.Controls.Add(this.cliente);
-            this.Controls.Add(this.btlimpiar);
+            this.Controls.Add(this.btlborrar);
             this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.cmbproducto);
             this.Controls.Add(this.cmbcliente);
@@ -127,7 +127,7 @@
         private System.Windows.Forms.ComboBox cmbcliente;
         private System.Windows.Forms.ComboBox cmbproducto;
         private System.Windows.Forms.Button btnbuscar;
-        private System.Windows.Forms.Button btlimpiar;
+        private System.Windows.Forms.Button btlborrar;
         private System.Windows.Forms.Label cliente;
         private System.Windows.Forms.Label producto;
     }

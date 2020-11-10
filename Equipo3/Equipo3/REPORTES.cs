@@ -58,6 +58,9 @@ namespace Equipo3
             reporte();
         }
 
-        
+        private void btlborrar_Click(object sender, EventArgs e)
+        {
+            dataGridViewreporte.DataSource = null;
+        }
     }
 }
