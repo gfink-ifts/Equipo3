@@ -19,7 +19,7 @@ namespace Equipo3
         decimal total_acumulado = 0;
         decimal descuento = 0;
         decimal precio_final = 0;
-        int id_pago;
+        int id_pago = 6;
 
         public VENTAS(int id_cliente)
         {
@@ -181,6 +181,7 @@ namespace Equipo3
             {
                 if (rdbEfectivo.Checked)
                 {
+                    id_pago = 6;
                     confeccionFactura();
                     this.Close();
                 }
@@ -326,8 +327,47 @@ namespace Equipo3
                 cn.Close();
             }
 
+            ACTUALIZACION_STOCK();
 
             MessageBox.Show("La venta se ha realizado con éxito.");            
+        }
+
+        private void ACTUALIZACION_STOCK()
+        {
+            //ACTUALIZACION DE STOCK POSTERIOR A LA VENTA REALIZADA
+
+            int id_producto = 0 ;
+            int limite = dtgvListaProductos.Rows.Count;
+
+            for (int i = 0; i < limite - 1; i++)
+            {
+                id_producto = Convert.ToInt32(dtgvListaProductos.Rows[i].Cells[0].Value.ToString());
+                decimal cantidad_a_restar = Convert.ToDecimal(dtgvListaProductos.Rows[i].Cells[2].Value.ToString());
+                decimal viejo_stock = CALCULO_VIEJO_STOCK(id_producto);                
+                decimal nuevo_stock = viejo_stock - cantidad_a_restar;
+                string query = "update producto set stock=@nuevo_stock where id_producto=" + id_producto;
+                SqlCommand comando = new SqlCommand(query, cn);
+                comando.Parameters.AddWithValue("@nuevo_stock", nuevo_stock);
+                cn.Open();
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                cn.Close();                
+            }            
+        }
+
+        decimal CALCULO_VIEJO_STOCK(int id_producto)
+        {
+            decimal valor = 0;
+            string query = "select * from producto where id_producto = " + id_producto;
+            SqlCommand comando = new SqlCommand(query, cn);
+            cn.Open();
+            SqlDataReader lectura = comando.ExecuteReader();
+            while (lectura.Read())
+            {
+                valor = Convert.ToDecimal(lectura[4].ToString());
+            }
+            cn.Close();
+            return valor;
         }
     }
 }

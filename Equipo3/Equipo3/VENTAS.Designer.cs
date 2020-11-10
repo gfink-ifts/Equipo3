@@ -72,11 +72,11 @@
             this.lblPrecioFinal = new System.Windows.Forms.Label();
             this.lblDescuento = new System.Windows.Forms.Label();
             this.gpbxFormaPago = new System.Windows.Forms.GroupBox();
+            this.btnCalcularDescuento = new System.Windows.Forms.Button();
             this.lblTarjeta = new System.Windows.Forms.Label();
             this.rdbTarjeta = new System.Windows.Forms.RadioButton();
             this.rdbEfectivo = new System.Windows.Forms.RadioButton();
             this.cmbFormasPago = new System.Windows.Forms.ComboBox();
-            this.btnCalcularDescuento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDisponible)).BeginInit();
             this.gpbxSeleccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListaProductos)).BeginInit();
@@ -510,6 +510,16 @@
             this.gpbxFormaPago.TabStop = false;
             this.gpbxFormaPago.Text = "Forma de pago";
             // 
+            // btnCalcularDescuento
+            // 
+            this.btnCalcularDescuento.Location = new System.Drawing.Point(100, 91);
+            this.btnCalcularDescuento.Name = "btnCalcularDescuento";
+            this.btnCalcularDescuento.Size = new System.Drawing.Size(205, 23);
+            this.btnCalcularDescuento.TabIndex = 6;
+            this.btnCalcularDescuento.Text = "Calcular descuento";
+            this.btnCalcularDescuento.UseVisualStyleBackColor = true;
+            this.btnCalcularDescuento.Click += new System.EventHandler(this.btnCalcularDescuento_Click);
+            // 
             // lblTarjeta
             // 
             this.lblTarjeta.AutoSize = true;
@@ -549,16 +559,6 @@
             this.cmbFormasPago.Name = "cmbFormasPago";
             this.cmbFormasPago.Size = new System.Drawing.Size(205, 21);
             this.cmbFormasPago.TabIndex = 2;
-            // 
-            // btnCalcularDescuento
-            // 
-            this.btnCalcularDescuento.Location = new System.Drawing.Point(100, 91);
-            this.btnCalcularDescuento.Name = "btnCalcularDescuento";
-            this.btnCalcularDescuento.Size = new System.Drawing.Size(205, 23);
-            this.btnCalcularDescuento.TabIndex = 6;
-            this.btnCalcularDescuento.Text = "Calcular descuento";
-            this.btnCalcularDescuento.UseVisualStyleBackColor = true;
-            this.btnCalcularDescuento.Click += new System.EventHandler(this.btnCalcularDescuento_Click);
             // 
             // VENTAS
             // 
