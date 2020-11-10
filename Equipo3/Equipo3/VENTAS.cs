@@ -180,7 +180,28 @@ namespace Equipo3
             }
             else
             {
-                confeccionFactura();            
+                if (rdbEfectivo.Checked)
+                {
+                    confeccionFactura();
+                    this.Close();
+                }
+                if (rdbTarjeta.Checked)
+                {
+                    if (descuento == 0)
+                    {
+                        MessageBox.Show("Calcule el descuento que obtiene con la forma de pago elegida.");
+                    }
+                    else
+                    {
+                        confeccionFactura();
+                        this.Close();
+                    }
+                }
+                if (rdbTarjeta.Checked == false && rdbEfectivo.Checked == false)
+                {
+                    MessageBox.Show("Elija un método de pago.");
+                }
+                
             }
         }
 
@@ -249,31 +270,63 @@ namespace Equipo3
         private void confeccionFactura()
         {
             //ARMADO FACTURA
-            int id_venta = 0; //chequear tabla de ventas
+            string consultita = "select count(*) from venta";
+            SqlCommand id_de_la_venta = new SqlCommand(consultita, cn);
+            cn.Open();
+            int id_venta = int.Parse(id_de_la_venta.ExecuteScalar().ToString());
+            cn.Close();
             DateTime fecha = DateTime.Now;
             int el_cliente = id_persona;
             int id_forma_pago = id_pago;
             decimal subtotal = total_acumulado;
             decimal total = precio_final;
 
-
-            string cmd = "insert into venta (fecha,id_cliente,id_forma_pago,subtotal,total)" + "values ( @fecha, @id_cliente, @id_forma_pago, @subtotal, @total )";
+            /*
+            //muestra de los datos
+            string fechita = Convert.ToString(fecha);
+            MessageBox.Show("Los valores son.. id_venta= " + id_venta + "  fecha:" + fechita + " idcliente.idformapago: " + el_cliente + id_forma_pago + "   " + subtotal + total);
+            */
+            
+            string cmd = "insert into venta (id_venta,fecha,id_cliente,id_forma_pago,subtotal,total)" + "values ( @id_venta,@fecha, @id_cliente, @id_forma_pago, @subtotal, @total )";
             SqlCommand comando = new SqlCommand(cmd, cn);
-            comando.Parameters.AddWithValue("@tipo_cliente", tipo_cliente);
-            comando.Parameters.AddWithValue("@CUIT", CUIT);
-            comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@direccion", direccion);
-            comando.Parameters.AddWithValue("@telefono", telefono);
-            comando.Parameters.AddWithValue("@email", email);
+            comando.Parameters.AddWithValue("@id_venta", id_venta);
+            comando.Parameters.AddWithValue("@fecha", fecha);
+            comando.Parameters.AddWithValue("@id_cliente", el_cliente);
+            comando.Parameters.AddWithValue("@id_forma_pago", id_forma_pago);
+            comando.Parameters.AddWithValue("@subtotal", subtotal);
+            comando.Parameters.AddWithValue("@total", total);            
             cn.Open();
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
-            cn.Close();
-
-
+            cn.Close();            
 
             //ARMADO CONCEPTOS DE FACTURA
-            //recorrer la tabla de lista de productos para meter en tabla concepto
+            int limite = dtgvListaProductos.Rows.Count;
+            for (int i = 0; i < limite - 1 ; i++)
+            {
+                int id_venta_query = id_venta;
+                int id_producto_query = Convert.ToInt32(dtgvListaProductos.Rows[i].Cells[0].Value.ToString());
+                decimal cantidad_query = Convert.ToDecimal(dtgvListaProductos.Rows[i].Cells[2].Value.ToString());
+                decimal precio_unitario_query = Convert.ToDecimal(dtgvListaProductos.Rows[i].Cells[3].Value.ToString());
+                decimal importe_query = Convert.ToDecimal(dtgvListaProductos.Rows[i].Cells[4].Value.ToString());
+
+                /*
+                MessageBox.Show("fila "+i+"  valor  id_venta= " + id_venta_query + "  id_prodcuto:" + id_producto_query + "  cantidad: " + cantidad_query + "   precuo_Uni: " +precio_unitario_query  + " importe  " + importe_query);
+                */
+                                
+                string query_conceptos = "insert into concepto (id_venta,id_producto,cantidad,precio_unitario,importe)" + "values ( @id_venta,@id_producto,@cantidad,@precio_unitario,@importe )";
+                SqlCommand comando_conceptos = new SqlCommand(query_conceptos, cn);
+                comando_conceptos.Parameters.AddWithValue("@id_venta", id_venta_query);
+                comando_conceptos.Parameters.AddWithValue("@id_producto", id_producto_query);
+                comando_conceptos.Parameters.AddWithValue("@cantidad", cantidad_query);
+                comando_conceptos.Parameters.AddWithValue("@precio_unitario", precio_unitario_query);
+                comando_conceptos.Parameters.AddWithValue("@importe", importe_query);
+                cn.Open();
+                comando_conceptos.ExecuteNonQuery();
+                comando_conceptos.Parameters.Clear();
+                cn.Close();
+            }
+
 
             MessageBox.Show("La venta se ha realizado con éxito.");            
         }
