@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.dtgvDisponible = new System.Windows.Forms.DataGridView();
@@ -78,14 +77,11 @@
             this.rdbTarjeta = new System.Windows.Forms.RadioButton();
             this.rdbEfectivo = new System.Windows.Forms.RadioButton();
             this.cmbFormasPago = new System.Windows.Forms.ComboBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDisponible)).BeginInit();
             this.gpbxSeleccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListaProductos)).BeginInit();
             this.gpbxCliente.SuspendLayout();
             this.gpbxFormaPago.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -564,19 +560,6 @@
             this.cmbFormasPago.Size = new System.Drawing.Size(205, 21);
             this.cmbFormasPago.TabIndex = 2;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(81, 26);
-            // 
-            // sToolStripMenuItem
-            // 
-            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
-            this.sToolStripMenuItem.Size = new System.Drawing.Size(80, 22);
-            this.sToolStripMenuItem.Text = "S";
-            // 
             // VENTAS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,7 +592,6 @@
             this.gpbxCliente.PerformLayout();
             this.gpbxFormaPago.ResumeLayout(false);
             this.gpbxFormaPago.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,7 +648,5 @@
         private System.Windows.Forms.RadioButton rdbEfectivo;
         private System.Windows.Forms.ComboBox cmbFormasPago;
         private System.Windows.Forms.Button btnCalcularDescuento;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem;
     }
 }
