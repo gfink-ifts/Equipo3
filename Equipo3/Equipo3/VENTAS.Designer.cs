@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.dtgvDisponible = new System.Windows.Forms.DataGridView();
@@ -72,16 +73,19 @@
             this.lblPrecioFinal = new System.Windows.Forms.Label();
             this.lblDescuento = new System.Windows.Forms.Label();
             this.gpbxFormaPago = new System.Windows.Forms.GroupBox();
+            this.btnCalcularDescuento = new System.Windows.Forms.Button();
             this.lblTarjeta = new System.Windows.Forms.Label();
             this.rdbTarjeta = new System.Windows.Forms.RadioButton();
             this.rdbEfectivo = new System.Windows.Forms.RadioButton();
             this.cmbFormasPago = new System.Windows.Forms.ComboBox();
-            this.btnCalcularDescuento = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDisponible)).BeginInit();
             this.gpbxSeleccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListaProductos)).BeginInit();
             this.gpbxCliente.SuspendLayout();
             this.gpbxFormaPago.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -510,6 +514,16 @@
             this.gpbxFormaPago.TabStop = false;
             this.gpbxFormaPago.Text = "Forma de pago";
             // 
+            // btnCalcularDescuento
+            // 
+            this.btnCalcularDescuento.Location = new System.Drawing.Point(100, 91);
+            this.btnCalcularDescuento.Name = "btnCalcularDescuento";
+            this.btnCalcularDescuento.Size = new System.Drawing.Size(205, 23);
+            this.btnCalcularDescuento.TabIndex = 6;
+            this.btnCalcularDescuento.Text = "Calcular descuento";
+            this.btnCalcularDescuento.UseVisualStyleBackColor = true;
+            this.btnCalcularDescuento.Click += new System.EventHandler(this.btnCalcularDescuento_Click);
+            // 
             // lblTarjeta
             // 
             this.lblTarjeta.AutoSize = true;
@@ -550,15 +564,18 @@
             this.cmbFormasPago.Size = new System.Drawing.Size(205, 21);
             this.cmbFormasPago.TabIndex = 2;
             // 
-            // btnCalcularDescuento
+            // contextMenuStrip1
             // 
-            this.btnCalcularDescuento.Location = new System.Drawing.Point(100, 91);
-            this.btnCalcularDescuento.Name = "btnCalcularDescuento";
-            this.btnCalcularDescuento.Size = new System.Drawing.Size(205, 23);
-            this.btnCalcularDescuento.TabIndex = 6;
-            this.btnCalcularDescuento.Text = "Calcular descuento";
-            this.btnCalcularDescuento.UseVisualStyleBackColor = true;
-            this.btnCalcularDescuento.Click += new System.EventHandler(this.btnCalcularDescuento_Click);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(81, 26);
+            // 
+            // sToolStripMenuItem
+            // 
+            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(80, 22);
+            this.sToolStripMenuItem.Text = "S";
             // 
             // VENTAS
             // 
@@ -592,6 +609,7 @@
             this.gpbxCliente.PerformLayout();
             this.gpbxFormaPago.ResumeLayout(false);
             this.gpbxFormaPago.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,5 +666,7 @@
         private System.Windows.Forms.RadioButton rdbEfectivo;
         private System.Windows.Forms.ComboBox cmbFormasPago;
         private System.Windows.Forms.Button btnCalcularDescuento;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem;
     }
 }

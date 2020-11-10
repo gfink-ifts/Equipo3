@@ -19,7 +19,7 @@ namespace Equipo3
         decimal total_acumulado = 0;
         decimal descuento = 0;
         decimal precio_final = 0;
-        int id_pago = 99;
+        int id_pago = 6;
 
         public VENTAS(int id_cliente)
         {
@@ -181,6 +181,7 @@ namespace Equipo3
             {
                 if (rdbEfectivo.Checked)
                 {
+                    id_pago = 6;
                     confeccionFactura();
                     this.Close();
                 }
