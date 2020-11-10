@@ -82,6 +82,8 @@ namespace Equipo3
             SqlCommand comando = new SqlCommand(query, cn);
             cn.Open();
             SqlDataReader dr = comando.ExecuteReader();
+            
+            
             while (dr.Read())
             {
                 id_cliente = Convert.ToInt32(dr[0].ToString());
