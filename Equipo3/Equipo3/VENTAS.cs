@@ -104,7 +104,7 @@ namespace Equipo3
 
             decimal cantidad = Convert.ToDecimal(txtCantidad.Text);
             bool se_puede_agregar = CHEQUEO_STOCK(cantidad);
-            bool producto_repetido = false;
+            bool producto_repetido = CHEQUEO_SI_REPITE(dtgvListaProductos, label1.Text);
 
 
             if (producto_repetido)
@@ -137,15 +137,14 @@ namespace Equipo3
             }
             return resultado;
         }
-        /*
+        
         private bool CHEQUEO_SI_REPITE(DataGridView tabla, string eleccion)
         {
             bool se_repite = false;
 
-            for (int i = 0; i < tabla.Rows.Count; i++)
+            for (int i = 0; i < tabla.Rows.Count -1 ; i++)
             {
-                string comparacion = tabla.Rows[i].Cells[2].ToString();
-                MessageBox.Show("se compara eleccion: " + eleccion + " contra valor de datagrid: " + comparacion);
+                string comparacion = tabla.Rows[i].Cells[0].Value.ToString();
                 if (eleccion == comparacion)
                 {
                     se_repite = true;
@@ -154,7 +153,7 @@ namespace Equipo3
 
             return se_repite;
         }
-        */
+        
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dtgvListaProductos.SelectedRows.Count > 0)
