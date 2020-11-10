@@ -58,6 +58,12 @@
     <Compile Include="ALTA-CLIENTE.Designer.cs">
       <DependentUpon>ALTA-CLIENTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORTES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES.Designer.cs">
+      <DependentUpon>REPORTES.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMAS_PAGO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="REPORTES.resx">
+      <DependentUpon>REPORTES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VENTAS.resx">
       <DependentUpon>VENTAS.cs</DependentUpon>
     </EmbeddedResource>

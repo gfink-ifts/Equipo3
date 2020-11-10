@@ -49,5 +49,13 @@ namespace Equipo3
             formFormaPago.ShowDialog();
             this.Show();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            REPORTES formReportes = new REPORTES();
+            this.Hide();
+            formReportes.ShowDialog();
+            this.Show();
+        }
     }
 }
